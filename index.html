@@ -13,9 +13,26 @@
 		<!-- Mobile First Scale -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
+		<!-- Page Title -->		
+		<title>Recon Time</title>
+		
+		<!-- Favicon -->		
+		<link rel="icon" href="img/favicon.ico">
+		
+		<!-- Integrated CSS File -->
+		<style>
+			#timestamp:hover {
+				background-color: white;
+				border-color: #ccc;
+			}
+		</style>
 		
 	</head>	
 	<body>
+	
+		<!-- Button Admin-Panel -->
+		<button style="margin-top: 10px; margin-left: 10px;" type="button" class="btn btn-default col-md-1">Admin-Panel</button>
+	
 	
 		<!-- Modal -->
 		<div id="myModal" class="modal fade" role="dialog">
@@ -38,12 +55,15 @@
 		  </div>
 		</div>
 	
+		<!-- Recon Time Logo -->
 		<div class="container text-center">
 			<div class="embed-responsive embed-responsive-16by9">
 				<img src="img/ReconTime.png" class="embed-responsive-item" alt="Recon Time">
 			</div>
 		</div>
 		
+		
+		<!-- Content Field -->
 		<div class="container text-center">
 			<form role="form">
 				<div class="form-group">
@@ -52,9 +72,16 @@
 			</form>
 		</div>
 	
+		<!-- Buttons -->
 		<div class="container text-center">
+				
+				<!-- Start Button -->
 				<button type="button" class="btn btn-primary btn-lg col-md-4" data-toggle="modal" data-target="#myModal"><h1>Start</h1></button>
+				
+				<!-- Time Stamp -->
 				<button id="timestamp" style="color: inherit;" type="button" class="btn btn-default btn-lg col-md-4"><h1>12.00</h1></button>
+				
+				<!-- End -->
 				<button type="button" class="btn btn-success btn-lg col-md-4"><h1>Ende</h1></button>
 		</div>
 	</body>

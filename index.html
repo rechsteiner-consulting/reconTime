@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-	<head>
+	<head>																													
 		<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="scripts/bootstrap.min.css">
 
@@ -30,12 +30,58 @@
 		<!--Timestampscript-->
 		<script type="text/javascript" language="JavaScript" src="scripts/timeKeeper.js"></script>
 		
-	</head>	
-	<body>
-	
+	</head>																													
+	<body>																													
+																																			
+		<!-- Modal Admin Pannel -->																							
+		<div id="adminModal" class="modal fade" role="dialog">
+		  <div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+			  <div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Admin Panel</h4>
+			  </div>
+			  <div class="modal-body">
+
+				<form name="login">
+					<div class="form-group">
+						<label for="email">Email address:</label>
+						<input type="text" class="form-control" id="email" name="userid" >
+					</div>
+					<div class="form-group">
+						<label for="pwd">Password:</label>
+						<input type="password" class="form-control" id="pwd" name="pswrd">
+					</div>
+					  
+					<button type="button" class="btn btn-default" onclick="check(this.form)">Submit</button>
+					
+				</form>
+				<script language="javascript">
+					function check(form) { /*function to check userid & password*/
+						/*the following code checkes whether the entered userid and password are matching*/
+						if(form.userid.value == "" && form.pswrd.value == "") {
+							window.location = "adminpanel.html";/*opens the target page while Id & password matches*/
+						}
+						else {
+							alert("Error Password or Username incorrect")/*displays error message*/
+						}
+					}
+				</script>
+					
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+
+		  </div>
+		</div>																													
+																																			
+		
 		<!-- Button Admin-Panel -->
-		<button style="margin-top: 10px; margin-left: 10px;" type="button" class="btn btn-default col-md-1">Admin-Panel</button>
-	
+		<button style="margin-top: 10px; margin-left: 10px;" type="button" class="btn btn-default col-md-1" data-toggle="modal" data-target="#adminModal">Admin-Panel</button>	
 	
 		<!-- Start Modal -->
 		<div id="startModal" class="modal fade" role="dialog">
@@ -84,7 +130,7 @@
 			<div class="embed-responsive embed-responsive-16by9">
 				<img src="img/ReconTime.png" class="embed-responsive-item" alt="Recon Time">
 			</div>
-		</div>
+		</div>																													
 		
 		
 		<!-- Content Field -->
@@ -110,5 +156,5 @@
 				<button id="endButton" type="button" class="btn btn-success btn-lg col-md-4" data-toggle="modal" data-target="#endModal"><h1>Ende</h1></button>
 				
 		</div>
-	</body>
+	</body>																													
 </html>

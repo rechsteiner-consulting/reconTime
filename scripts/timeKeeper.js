@@ -1,10 +1,13 @@
 window.onload = function()
 {
-    time();
+	document.getElementById("startButton").addEventListener("click", startWork);
+	document.getElementById("endButton").addEventListener("click", endWork);
     window.setInterval("time()", 1000);
-	document.getElementById("startButton").addEventListener("click", startWork());
-	document.getElementById("endButton").addEventListener("click", endWork());
+	
 }
+
+
+
 
 function time() {
     var now = new Date();
@@ -20,6 +23,11 @@ function time() {
     document.getElementById('time').innerHTML = '<h1>' + time + '</h1>';
 }
 
+
+
+
+
+
 function startWork() {
 	var now = new Date();
 	var startWorkHours = now.getHours();
@@ -32,6 +40,7 @@ function startWork() {
     startTime += (startWorkSeconds < 10) ? "0" + startWorkSeconds : startWorkSeconds;
 	
 	document.getElementById('modalStartBody').innerHTML =  startTime ;
+	
 }
 
 function endWork() {
@@ -46,4 +55,5 @@ function endWork() {
     endTime += (endWorkSeconds < 10) ? "0" + endWorkSeconds : endWorkSeconds;
 	
 	document.getElementById('modalEndBody').innerHTML =  endTime ;
+	
 }

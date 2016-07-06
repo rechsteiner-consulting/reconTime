@@ -6,9 +6,6 @@ window.onload = function()
 	
 }
 
-
-
-
 function time() {
     var now = new Date();
     var hours = now.getHours();
@@ -22,11 +19,6 @@ function time() {
  
     document.getElementById('time').innerHTML = '<h1>' + time + '</h1>';
 }
-
-
-
-
-
 
 function startWork() {
 	var now = new Date();
@@ -55,5 +47,4 @@ function endWork() {
     endTime += (endWorkSeconds < 10) ? "0" + endWorkSeconds : endWorkSeconds;
 	
 	document.getElementById('modalEndBody').innerHTML =  endTime ;
-	
 }

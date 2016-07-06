@@ -2,6 +2,8 @@ window.onload = function()
 {
     time();
     window.setInterval("time()", 1000);
+	document.getElementById("startButton").addEventListener("click", startWork());
+	document.getElementById("endButton").addEventListener("click", endWork());
 }
 
 function time() {

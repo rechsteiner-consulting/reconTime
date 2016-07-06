@@ -55,14 +55,14 @@
 						<input type="password" class="form-control" id="pwd" name="pswrd">
 					</div>
 					  
-					<button type="submit" class="btn btn-default" onclick="check(this.form)">Submit</button>
+					<button type="button" class="btn btn-default" onclick="check(this.form)">Submit</button>
 					
 				</form>
 				<script language="javascript">
 					function check(form) { /*function to check userid & password*/
 						/*the following code checkes whether the entered userid and password are matching*/
 						if(form.userid.value == "" && form.pswrd.value == "") {
-							window.open("adminpanel.html")/*opens the target page while Id & password matches*/
+							window.location = "adminpanel.html";/*opens the target page while Id & password matches*/
 						}
 						else {
 							alert("Error Password or Username incorrect")/*displays error message*/

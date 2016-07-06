@@ -18,3 +18,6 @@ function time() {
     document.getElementById('time').innerHTML = '<h1>' + time + '</h1>';
 }
 
+function startTime() {
+	
+}

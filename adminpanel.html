@@ -10,6 +10,8 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="scripts/bootstrap.min.js"></script>
 		
+		<script src="scripts/loginmodal.js"></script>
+		
 		<!-- Mobile First Scale -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
@@ -19,20 +21,138 @@
 		<!-- Favicon -->		
 		<link rel="icon" href="img/favicon.ico">
 		
-		<!--Timestampscript-->
-		<script type="text/javascript" language="JavaScript" src="scripts/timeKeeper.js"></script>
-	</head>		
+		<!--UTF8-->
+		<meta charset="UTF-8">
+		
+	</head>	
+	
 	<body>	
-		<button type="button" class="btn btn-default" style="margin-top: 10px; margin-left: 10px">Exit</button></div>
+		<div class="container-fluid">
+			<a  href="index.html"><button type="button" class="btn btn-danger col-md-1" style="margin-top: 10px; margin-left: 10px">Zurück zu ReconTime</button></a>
+			<button type="button" class="btn btn-default col-md-1 pull-right" style="margin-top: 10px; margin-right: 10px">Browser schliessen</button>
+		</div>
+		
+		<div class="container-fluid text-center">
+			<div class="page-header" style="margin-top: -25px;"><h1>Admin-Panel</h1></div>
+		</div>
+		
 		<!--Buttongroup-->
 		<div class="container">
 			<div class="btn-group btn-group-justified" style="margin-top: 20px">
-				<a href="#" class="btn btn-primary">Home</a>
-				<a href="#" class="btn btn-primary" data-toggle="modal" data-target="#userModal">Benutzerverwaltung</a>
-				<a href="#" class="btn btn-primary">Text</a>
-			
+				<a data-toggle="tab" href="#home" class="btn btn-success btn-lg">Home</a>
+				<a data-toggle="tab" href="#benutzerverwaltung" class="btn btn-success btn-lg">Benutzerverwaltung</a>
+				<a data-toggle="tab" href="#info" class="btn btn-success btn-lg">System Informationen</a>	
+			</div>
+		</div>
+		
+		<div class="container">
+			<div class="tab-content">
+				
+				
+				
+				<div id="home" class="tab-pane fade in active">
+					<div class="page-header"><h1>Home</h1>
+						<p>Übersicht über Recon Time</p>
+					</div>
+				  
+					<div class="container">
+						<p></p>
+					</div>
+					
+		
+				</div>
+				
+				
+				
+				<div id="benutzerverwaltung" class="tab-pane">
+					<div class="page-header"><h1>Benutzerverwaltung</h1>
+						<p>Verwalten Sie hier Ihre Benutzer.</p>
+					</div>
+				  
+					<div class="container">
+						<p>Verwalten und Entfernen Sie hier Ihre Benutzer.</p>
+						<button type="button" class="btn btn-primary col-md-2" data-toggle="modal" data-target="#usershowModal">Benutzer Verwalten</button>
+					</div>
+					
+					<div class="container-fluid" style="height: 40px;"></div>
+					
+					<div class="container">
+						<p>Verwalten und Entfernen Sie hier Ihre Benutzer.</p>
+						<button type="button" class="btn btn-primary col-md-2" data-toggle="modal" data-target="#useraddModal">Benutzer Hinzufügen</button>
+					</div>
+				</div>
+				
+				
+				
+				<div id="info" class="tab-pane fade">
+					<div class="page-header"><h1>System Informationen</h1>
+						<p>Aktuelle System Informationen.</p>
+					</div>
+					<div class="container">
+						<div class="panel panel-primary">
+							<div class="panel-heading">Allgemein</div>
+							<div class="panel-body">
+							
+								<table class="table" style="border-top: none;">
+									  <p>
+									  <tr>
+										<td>Betriebssystem</td>
+										<td>Windows 7 Professional 64Bit</td>
+									  </tr>
+									  <tr>
+										<td>Systemname</td>
+										<td>srecontime</td>
+									  </tr>
+									  <tr>
+										<td>IP-Adresse</td>
+										<td>192.168.17.220</td>
+									  </tr>
+								</table>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container">
 			<!-- Modal -->
-			<div id="userModal" class="modal fade" role="dialog">
+			<div id="usershowModal" class="modal fade" role="dialog">
+			<div class="modal-dialog">
+
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Benutzerverwaltung</h4>
+				</div>
+				<div class="modal-body">
+					<form role="form">
+						<div class="panel panel-default">
+							<div class="panel-heading">Benutzerkonten</div>
+							<div class="panel-body"></div>
+						</div>
+					</form>
+					<div class="container-fluid text-center">
+						<button type="button" class="btn btn-success col-md-4">Ändern</button>
+						<div class="col-md-4" ></div>
+						<button type="button" class="btn btn-danger col-md-4">Löschen</button>
+					</div>
+				</div>
+				
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
+				</div>
+			</div>
+			</div>
+			</div>
+		</div>
+																																										
+																																									
+		<div class="container">
+			<!-- Modal -->
+			<div id="useraddModal" class="modal fade" role="dialog">
 			<div class="modal-dialog">
 
 			<!-- Modal content-->
@@ -51,22 +171,31 @@
 							<label for="pwd">Passwort:</label>
 							<input type="password" class="form-control" id="pwd">
 						</div>
-						<div class="checkbox">
-							<label><input type="checkbox"> Standardbenutzer</label>
+						<div class="form-group">
+							<label for="pwd">Barcode:</label>
+							<input type="barcode" class="form-control" id="brc">
 						</div>
-						<div class="checkbox">
-							<label><input type="checkbox"> Administrator</label>
+						
+						<div class="form-group">
+							<label for="sel1">Select list:</label>
+							<select class="form-control" id="sel1">
+								<option>Standardbenutzer</option>
+								<option>Administrator</option>
+						  </select>
 						</div>
-						<button type="submit" class="btn btn-default">Erstellen</button>
+						<button type="button" class="btn btn-success">Erstellen</button>
+						
+						
+						
 					</form>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Schliessen</button>
+					<button type="button" class="btn btn-danger" data-dismiss="modal">Abbrechen</button>
 				</div>
 			</div>
 			</div>
 			</div>
-		  </div>
-	</div>
+		</div>
+																																											
 	</body>																													
 </html>

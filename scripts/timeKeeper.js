@@ -17,10 +17,8 @@ function startWork() {
 }
 
 function endWork() {
-	var now = new Date();	
-	var endTime = new Date(timeOutputString(now));// HIER LIEGT DER FEHLER, FINDE IHN! LG JOEL
-	timeOutputString(timeDifference(startTime, endTime)) ;
-	//document.getElementById('modalEndBody').innerHTML =  timeOutputString(timeDifference(startTime, endTime));
+	var endTime = new Date();	
+	document.getElementById('modalEndBody').innerHTML =  timeOutputString(timeDifference(startTime, endTime));
 }
 
 function timeOutputString(date) {
@@ -40,10 +38,6 @@ function timeDifference(startTime, endTime) {
     var endTime = new Date(endTime);
 	var startTime = new Date(startTime);
 	var difference = new Date();
-	difference.setDate(startTime.getDate()-endTime.getDate());
-	difference.setDate(startTime.getSeconds()-endTime.getSeconds());
-  console.log(endTime.getDate());
-  console.log(difference.getDate(), difference.getTime());
 	document.getElementById('modalEndBody').innerHTML =  (endTime.getTime() - startTime.getTime());
 	return difference;
 }

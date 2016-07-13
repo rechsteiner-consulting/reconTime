@@ -37,8 +37,8 @@ function timeOutputString(date) {
 function timeDifference(startTime, endTime) {
     var endTime = new Date(endTime);
 	var startTime = new Date(startTime);
-	var difference = new Date();
-	document.getElementById('modalEndBody').innerHTML =  (endTime.getTime() - startTime.getTime());
+	var difference = endTime - startTime;	
+	
 	return difference;
 }
 

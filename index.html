@@ -10,6 +10,9 @@
 		<!-- Latest compiled JavaScript -->
 		<script src="scripts/bootstrap.min.js"></script>
 		
+		<!-- index JavaScript -->
+		<script src="scripts/resize.js"></script>
+		
 		<!-- Mobile First Scale -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
@@ -26,11 +29,16 @@
 				border-color: #ccc;
 			}
 		</style>
-		
+	
 		<!--Timestampscript-->
 		<script type="text/javascript" language="JavaScript" src="scripts/timeKeeper.js"></script>
 		
-	</head>																													
+		<script type="text/javascript" language="JavaScript" src="scripts/loginmodal.js"></script>
+		
+		<!--UTF8-->
+		<meta charset="UTF-8">
+	</head>						
+	
 	<body>																													
 																																			
 		<!-- Modal Admin Pannel -->																							
@@ -47,7 +55,7 @@
 
 				<form name="login">
 					<div class="form-group">
-						<label for="email">Email address:</label>
+						<label for="email">Username:</label>
 						<input type="text" class="form-control" id="email" name="userid" >
 					</div>
 					<div class="form-group">
@@ -55,24 +63,13 @@
 						<input type="password" class="form-control" id="pwd" name="pswrd">
 					</div>
 					  
-					<button type="button" class="btn btn-default" onclick="check(this.form)">Submit</button>
+					<button type="button" class="btn btn-primary" onclick="check(this.form)">Submit</button>
 					
 				</form>
-				<script language="javascript">
-					function check(form) { /*function to check userid & password*/
-						/*the following code checkes whether the entered userid and password are matching*/
-						if(form.userid.value == "" && form.pswrd.value == "") {
-							window.location = "adminpanel.html";/*opens the target page while Id & password matches*/
-						}
-						else {
-							alert("Error Password or Username incorrect")/*displays error message*/
-						}
-					}
-				</script>
 					
 			  </div>
 			  <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">Abbrechen</button>
 			  </div>
 			</div>
 
@@ -81,80 +78,71 @@
 																																			
 		
 		<!-- Button Admin-Panel -->
-		<button style="margin-top: 10px; margin-left: 10px;" type="button" class="btn btn-default col-md-1" data-toggle="modal" data-target="#adminModal">Admin-Panel</button>	
-	
-		<!-- Start Modal -->
-		<div id="startModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-			  <div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">Start Time</h4>
-			  </div>
-			  <div class="modal-body">
-				<p><div id="modalStartBody" ></div></p>
-			  </div>
-			  <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			  </div>
-			</div>
-
-		  </div>
+		<div class="container-fluid">
+			<button style="margin-top: 10px; margin-left: 10px;" type="button" class="btn btn-default col-md-1" data-toggle="modal" data-target="#adminModal">Admin-Panel</button>	
 		</div>
 		
-		<!-- End Modal -->
-		<div id="endModal" class="modal fade" role="dialog">
-		  <div class="modal-dialog">
-
-			<!-- Modal content-->
-			<div class="modal-content">
-			  <div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
-				<h4 class="modal-title">End Time</h4>
-			  </div>
-			  <div class="modal-body">
-				<p><div id="modalEndBody" ></div></p>
-			  </div>
-			  <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			  </div>
-			</div>
-
-		  </div>
-		</div>
-	
+		<div style="height: 50px;"></div>		
+		
 		<!-- Recon Time Logo -->
 		<div class="container text-center">
-			<div class="embed-responsive embed-responsive-16by9">
-				<img src="img/ReconTime.png" class="embed-responsive-item" alt="Recon Time">
+			<div class="img-responsive text-center">
+				<img src="img/ReconTime.png" class="embed-responsive-item text-center" alt="Recon Time"  style="width: 100%;" >
 			</div>
-		</div>																													
+		</div>	
 		
+		<div style="height: 50px;"></div>
 		
 		<!-- Content Field -->
 		<div class="container text-center">
 			<form role="form">
 				<div class="form-group">
-					<input class="form-control" id="email">
+					<input style="height: 50px;" class="form-control" id="email" placeholder="Enter Barcode">
 				</div>
 			</form>
 		</div>
-	
-		<!-- Buttons -->
-		<div class="container text-center">
-				
-				<!-- Start Button -->
-				<button id="startButton" type="button" class="btn btn-primary btn-lg col-md-4" data-toggle="modal" data-target="#startModal"><h1>Start</h1></button>
-
-				
-				<!-- Time Stamp -->
-				<button id="timestamp" style="color: inherit;" type="button" class="btn btn-default btn-lg col-md-4"><div id="time"> </div> </button>
-				
-				<!-- End Button -->
-				<button id="endButton" type="button" class="btn btn-success btn-lg col-md-4" data-toggle="modal" data-target="#endModal"><h1>Ende</h1></button>
-				
+		
+		<div style="height: 50px;"></div>
+		
+		<div class="container">
+			<div class="btn-group btn-group-justified">
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-primary btn-lg">In</a>
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-default btn-lg"><pw>Patrick Weber</pw></a>
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-success btn-lg">Out</a>
+			</div>
 		</div>
+		
+		<div style="height: 50px;"></div>
+		
+		<div class="container">
+			<div class="btn-group btn-group-justified">
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-primary btn-lg">In</a>
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-default btn-lg"><dr>David Rechsteiner</dr></a>
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-success btn-lg">Out</a>
+			</div>
+		</div>
+		
+		<div style="height: 50px;"></div>
+		
+		<div class="container">
+			<div class="btn-group btn-group-justified">
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-primary btn-lg">In</a>
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-default btn-lg"><tu>Tobias Urech</tu></a>
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-success btn-lg">Out</a>
+			</div>
+		</div>
+		
+		<div style="height: 50px;"></div>
+		
+		<div class="container">
+			<div class="btn-group btn-group-justified">
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-primary btn-lg">In</a>
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-default btn-lg"><nk>Nils Keller</nk></a>
+				<a style="height:80px; font-size:150%" href="#" class="btn btn-success btn-lg">Out</a>
+			</div>
+		</div>
+		
+
+		
 	</body>																													
 </html>

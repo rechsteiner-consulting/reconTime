@@ -23,6 +23,3 @@ before_script:
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0
   - mysql -e 'create database db_recontime;'
-
-script:
-- npm run ci

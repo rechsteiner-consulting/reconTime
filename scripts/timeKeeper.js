@@ -1,8 +1,13 @@
 window.onload = function()
 {
-	document.getElementById("startButton").addEventListener("click", startWork);
-	document.getElementById("endButton").addEventListener("click", endWork);
-    window.setInterval("time()", 1000);
+	document.getElementById("pwIn").addEventListener("click", pwStartWork);
+	document.getElementById("pwOut").addEventListener("click", pwEndWork);
+	document.getElementById("drIn").addEventListener("click", drStartWork);
+	document.getElementById("drOut").addEventListener("click", drEndWork);
+	document.getElementById("tuIn").addEventListener("click", tuStartWork);
+	document.getElementById("tuOut").addEventListener("click", tuEndWork);
+	document.getElementById("nkIn").addEventListener("click", nkStartWork);
+	document.getElementById("nkOut").addEventListener("click", nkEndWork);
 }
 
 function time() {
@@ -10,20 +15,53 @@ function time() {
     document.getElementById('time').innerHTML = '<h1>' + timeOutputString(now) + '</h1>';
 }
 
-function startWork() {
+function pwStartWork() {
 	startTime = new Date();		
-	document.getElementById('modalStartBody').innerHTML =  timeOutputString(startTime);
+	document.getElementById('pwIn').innerHTML =  timeOutputString(startTime);
 	startTime = Date(timeOutputString(startTime));	
 }
 
-function endWork() {
+function pwEndWork() {
 	var endTime = new Date();	
-	document.getElementById('modalEndBody').innerHTML =  timeOutputString(timeDifference(startTime, endTime));
+	document.getElementById('pwOut').innerHTML =  timeOutputString(timeDifference(startTime, endTime));
+}
+
+function drStartWork() {
+	startTime = new Date();		
+	document.getElementById('drIn').innerHTML =  timeOutputString(startTime);
+	startTime = Date(timeOutputString(startTime));	
+}
+
+function drEndWork() {
+	var endTime = new Date();	
+	document.getElementById('drOut').innerHTML =  timeOutputString(timeDifference(startTime, endTime));
+}
+
+function tuStartWork() {
+	startTime = new Date();		
+	document.getElementById('tuIn').innerHTML =  timeOutputString(startTime);
+	startTime = Date(timeOutputString(startTime));	
+}
+
+function tuEndWork() {
+	var endTime = new Date();	
+	document.getElementById('tuOut').innerHTML =  timeOutputString(timeDifference(startTime, endTime));
+}
+
+function nkStartWork() {
+	startTime = new Date();		
+	document.getElementById('nkIn').innerHTML =  timeOutputString(startTime);
+	startTime = Date(timeOutputString(startTime));	
+}
+
+function nkEndWork() {
+	var endTime = new Date();	
+	document.getElementById('nkOut').innerHTML =  timeOutputString(timeDifference(startTime, endTime));
 }
 
 function timeOutputString(date) {
 	var date = new Date(date);
-	var hours = date.getHours();
+	var hours = date.getHours() - 1;
 	var minutes = date.getMinutes();
     var seconds = date.getSeconds();
 	var time = "";

@@ -10,3 +10,10 @@ var connection = mysql.createConnection({
   database: 'db_recontime'
 });
 connection.connect();
+
+
+connection.query('select * from lehrlinge', function(err, result) {
+  console.log(result);
+});
+
+

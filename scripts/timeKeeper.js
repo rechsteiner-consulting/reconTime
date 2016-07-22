@@ -80,4 +80,3 @@ function timeDifference(startTime, endTime) {
 	return difference;
 }
 
-

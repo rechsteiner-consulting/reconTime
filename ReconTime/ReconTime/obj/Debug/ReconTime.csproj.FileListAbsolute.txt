@@ -1,1 +1,14 @@
 C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\bin\Debug\ReconTime.exe.config
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\bin\Debug\ReconTime.exe
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\bin\Debug\ReconTime.pdb
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\ReconTime.csprojResolveAssemblyReference.cache
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\MainWindow.g.cs
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\App.g.cs
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\ReconTime_MarkupCompile.cache
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\ReconTime_MarkupCompile.lref
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\MainWindow.baml
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\ReconTime.g.resources
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\ReconTime.Properties.Resources.resources
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\ReconTime.csproj.GenerateResource.Cache
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\ReconTime.exe
+C:\Users\js\Documents\GitHub\reconTime\ReconTime\ReconTime\obj\Debug\ReconTime.pdb

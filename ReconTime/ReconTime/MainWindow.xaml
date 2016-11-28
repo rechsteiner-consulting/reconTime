@@ -9,9 +9,12 @@
     <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="320" Margin="10,0,0,0" VerticalAlignment="Top" Width="505">
         <TabItem x:Name="tabScan" Header="Scan Barcode">
             <Grid x:Name="gridScan" Background="#FFFFFF">
-                <Button x:Name="buttonOk" Content="OK" HorizontalAlignment="Left" Margin="60,112,0,0" VerticalAlignment="Top" Width="75"/>
-                <Button x:Name="buttonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="200,112,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
-                <TextBox x:Name="inputBarcode" HorizontalAlignment="Left" Height="38" Margin="60,43,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="215" RenderTransformOrigin="0.167,0.602" AutomationProperties.HelpText="Enter Barcode Here"/>
+                <Button x:Name="buttonOk" Content="OK" HorizontalAlignment="Left" Margin="60,133,0,0" VerticalAlignment="Top" Width="75" Click="buttonOk_Click"/>
+                <Button x:Name="buttonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="200,133,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+                <TextBox x:Name="inputBarcode" HorizontalAlignment="Left" Height="38" Margin="60,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" RenderTransformOrigin="0.167,0.602" AutomationProperties.HelpText="Enter Barcode Here" TextChanged="inputBarcode_TextChanged" DragEnter="inputBarcode_Enter">
+                    <Binding Path="inputBarcode" Mode="TwoWay"/>
+                </TextBox>
+                <Label x:Name="labelBarcode" Content="" HorizontalAlignment="Left" Margin="60,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="-6.385,-1.929" Width="215" Height="57"/>
             </Grid>
         </TabItem>
         <TabItem x:Name="tabManualInput" Header="Manuell" Margin="-2,-2,-2,0" Height="22" VerticalAlignment="Top">

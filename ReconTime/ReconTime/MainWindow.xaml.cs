@@ -25,35 +25,46 @@ namespace ReconTime
             InitializeComponent();
         }
 
-        private void inputBarcode_TextChanged(object sender, TextChangedEventArgs e)
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
-           
-        }
-
-        private void inputBarcode_Enter(object sender, DragEventArgs e)
-        {
-            inputValidation();
+            if (e.Key == Key.Return)
+            {
+                inputValidation();
+            }
         }
 
         private void checkIn(int barcode)
         {   //TODO
-            Console.WriteLine("Login: " + barcode);
+            String outputString = "Login: " + barcode;
+            Console.WriteLine(outputString);
+            setScanLable(outputString);
         }
         private void checkOut(int barcode)
         {   //TODO
-            Console.WriteLine("Logout: " + barcode);
+            String outputString = "Logout: " + barcode;
+            Console.WriteLine(outputString);
+            setScanLable(outputString);
+            
         }
         private void printWrongFormat(int length)
         {
+            String errormessage = "Falsches Format. Bitte geben Sie eine Nummer mit " + length + " Zeichen ein.";
+            Console.WriteLine(errormessage);
+            setScanLable(errormessage);
+        }
 
-            Console.WriteLine("Falsches Format. Bitte geben Sie eine Nummer mit " + length + " Zeichen ein.");
+        private void setScanLable(String input)
+        {
+            scanLable.Document.Blocks.Clear();
+            scanLable.Document.Blocks.Add(new Paragraph(new Run(input)));
+            scanBarcodeBox.Text = "";
         }
 
         private void inputValidation()
         {
             int inputLength = 4;
             int barcode = 0;
-            String input = inputBarcode.Text;
+            String input = scanBarcodeBox.Text;
             if (input.Length == inputLength)
             {
                 try
@@ -64,7 +75,8 @@ namespace ReconTime
                 {
                     printWrongFormat(inputLength);
                 }
-                if (barcode % 2 == 0)
+
+                if (barcode % 2 == 0) //Refactor: iseven method
                 {
                     checkIn(barcode);
                 }

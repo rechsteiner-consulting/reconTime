@@ -10,19 +10,25 @@
         <TabItem x:Name="tabScan" Header="Scan Barcode">
             <Grid x:Name="gridScan" Background="#FFFFFF">
                 <Button x:Name="buttonOk" Content="OK" HorizontalAlignment="Left" Margin="60,133,0,0" VerticalAlignment="Top" Width="75" Click="buttonOk_Click"/>
-                <Button x:Name="buttonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="200,133,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
-                <TextBox x:Name="inputBarcode" HorizontalAlignment="Left" Height="38" Margin="60,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" RenderTransformOrigin="0.167,0.602" AutomationProperties.HelpText="Enter Barcode Here" TextChanged="inputBarcode_TextChanged" DragEnter="inputBarcode_Enter">
+                <Button x:Name="buttonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="201,133,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
+                <TextBox x:Name="scanBarcodeBox" HorizontalAlignment="Left" Margin="60,74,0,0" TextWrapping="Wrap" Width="215" RenderTransformOrigin="0.167,0.602" AutomationProperties.HelpText="Enter Barcode Here" KeyDown="OnKeyDownHandler" Height="38" VerticalAlignment="Top">
                     <Binding Path="inputBarcode" Mode="TwoWay"/>
                 </TextBox>
-                <Label x:Name="labelBarcode" Content="" HorizontalAlignment="Left" Margin="60,12,0,0" VerticalAlignment="Top" RenderTransformOrigin="-6.385,-1.929" Width="215" Height="57"/>
+                <RichTextBox x:Name="scanLable" HorizontalAlignment="Left" Height="59" Margin="60,10,0,0" VerticalAlignment="Top" Width="215">
+                    <FlowDocument>
+                        <Paragraph>
+                            <Run Text="Bitte Barcode scannen!" AllowDrop="True"/>
+                        </Paragraph>
+                    </FlowDocument>
+                </RichTextBox>
             </Grid>
         </TabItem>
         <TabItem x:Name="tabManualInput" Header="Manuell" Margin="-2,-2,-2,0" Height="22" VerticalAlignment="Top">
             <Grid x:Name="gridManual" Background="#FFFFFF">
                 <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="60,55,0,0" VerticalAlignment="Top" Width="184">
-                    <ComboBoxItem>David </ComboBoxItem>
-                        <ComboBoxItem>Nils</ComboBoxItem>
-                        <ComboBoxItem>Päde</ComboBoxItem>
+                    <ComboBoxItem>David</ComboBoxItem>
+                    <ComboBoxItem>Nils</ComboBoxItem>
+                    <ComboBoxItem>Päde</ComboBoxItem>
                     <ComboBoxItem>Tobi</ComboBoxItem>
                 </ComboBox>
                 <Button x:Name="buttonIn" Content="In" HorizontalAlignment="Left" Margin="60,120,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.167,-0.329"/>

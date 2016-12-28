@@ -11,10 +11,10 @@
             <Grid x:Name="gridScan" Background="#FFFFFF">
                 <Button x:Name="buttonOk" Content="OK" HorizontalAlignment="Left" Margin="60,133,0,0" VerticalAlignment="Top" Width="75" Click="buttonOk_Click"/>
                 <Button x:Name="buttonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="201,133,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
-                <TextBox x:Name="scanBarcodeBox" HorizontalAlignment="Left" Margin="60,74,0,0" TextWrapping="Wrap" Width="215" RenderTransformOrigin="0.167,0.602" AutomationProperties.HelpText="Enter Barcode Here" KeyDown="OnKeyDownHandler" Height="38" VerticalAlignment="Top">
+                <TextBox x:Name="scanBarcodeBox" HorizontalAlignment="Left" Margin="60,74,0,0" TextWrapping="Wrap" Width="379" RenderTransformOrigin="0.167,0.602" AutomationProperties.HelpText="Enter Barcode Here" KeyDown="OnKeyDownHandler" Height="38" VerticalAlignment="Top">
                     <Binding Path="inputBarcode" Mode="TwoWay"/>
                 </TextBox>
-                <RichTextBox x:Name="scanLable" HorizontalAlignment="Left" Height="59" Margin="60,10,0,0" VerticalAlignment="Top" Width="215">
+                <RichTextBox x:Name="scanLable" HorizontalAlignment="Left" Height="59" Margin="60,10,0,0" VerticalAlignment="Top" Width="379">
                     <FlowDocument>
                         <Paragraph>
                             <Run Text="Bitte Barcode scannen!" AllowDrop="True"/>

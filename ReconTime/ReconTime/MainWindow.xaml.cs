@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,20 +36,28 @@ namespace ReconTime
 
         private void checkIn(int barcode)
         {   //TODO
-            String outputString = "Login: " + barcode;
-            Console.WriteLine(outputString);
-            setScanLable(outputString);
+            barcode = Decimal.ToInt32(Math.Floor(Convert.ToDecimal(barcode / 10)));
+            writeCheck("Hallo", barcode, DateTime.Now);
         }
         private void checkOut(int barcode)
         {   //TODO
-            String outputString = "Logout: " + barcode;
+            barcode = Decimal.ToInt32(Math.Floor(Convert.ToDecimal(barcode/10)));
+            writeCheck("Tschüss", barcode, DateTime.Now);            
+        }
+
+        private void writeCheck(String checkType, int barcode, DateTime time)
+        {
+            String outputString = checkType + " " + barcode + "\nDatum / Zeit:\t " + time.ToString(new CultureInfo("de-DE"));
             Console.WriteLine(outputString);
             setScanLable(outputString);
-            
         }
         private void printWrongFormat(int length)
         {
             String errormessage = "Falsches Format. Bitte geben Sie eine Nummer mit " + length + " Zeichen ein.";
+            if(length == -1)
+            {
+                errormessage = "Keine führende 0 erlaubt";
+            }
             Console.WriteLine(errormessage);
             setScanLable(errormessage);
         }
@@ -70,20 +79,26 @@ namespace ReconTime
                 try
                 {
                     barcode = int.Parse(input);
+                    if (barcode < 1000)
+                    {
+                        throw new FormatException();
+                    }
+                
+                    if (barcode % 2 == 0) //Refactor: iseven method
+                    {
+                        checkIn(barcode);
+                    }
+                    else
+                    {
+                        checkOut(barcode);
+                    }
                 }
-                catch
+                catch (FormatException e)
                 {
-                    printWrongFormat(inputLength);
+                    printWrongFormat(-1);
                 }
 
-                if (barcode % 2 == 0) //Refactor: iseven method
-                {
-                    checkIn(barcode);
-                }
-                else
-                {
-                    checkOut(barcode);
-                }
+                
             }
             else
             {

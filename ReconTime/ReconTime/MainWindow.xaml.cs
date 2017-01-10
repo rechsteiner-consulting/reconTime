@@ -113,7 +113,7 @@ namespace ReconTime
         private void button_Click(object sender, RoutedEventArgs e)
         {
             EmployeeReader er = new EmployeeReader();
-            er.reader(inputUsername.Text, inputPassword.Password, "localhost");
+            er.Reader(inputUsername.Text, inputPassword.Password, "localhost");
         }
     }
 }

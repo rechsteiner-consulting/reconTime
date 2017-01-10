@@ -10,12 +10,12 @@ namespace ReconTime
 {
     class EmployeeReader
     {
-        public void reader(String user, String password, String server)
+        public void Reader(String user, String password, String server)
         {
             IDbConnection conn = null;
             try
             {
-                conn = connect();
+                conn = new DbConnection().Conn;
                 IDbCommand cmd = conn.CreateCommand();
                 cmd.CommandText = "Select EmployeeID, LastName, FirstName FROM Employees";
                 IDataReader reader = cmd.ExecuteReader();
@@ -24,10 +24,7 @@ namespace ReconTime
                 while (reader.Read())
                 {
                     // solange noch Daten vorhanden sind
-                    int
-                     cols =
-                    reader.GetValues
-                    (dataRow);
+                    int cols = reader.GetValues(dataRow);
                     // tatsächliches Lesen
                     for (int i = 0; i < cols; i++) Console.Write("| {0} ", dataRow[i]);
                     Console.WriteLine();
@@ -52,14 +49,6 @@ namespace ReconTime
             }
         }
         //TODO: Move to factory o.Ä.
-        public IDbConnection connect() {
-        IDbConnection conn = new SqlConnection();
-        conn.ConnectionString =
-                "Data Source=NBJS\\SQLEXPRESS;" + //TODO: DEBUG, change in real environment
-                "Initial Catalog=ReconTime;" +
-                "Integrated Security=SSPI;";
-        conn.Open();
-        return conn;
-       
     }
+
 }

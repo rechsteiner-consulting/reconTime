@@ -10,38 +10,19 @@
         <TabItem x:Name="tabScan" Header="Scan Barcode">
             <Grid x:Name="gridScan" Background="#FFFFFF">
                 <Button x:Name="buttonOk" Content="OK" HorizontalAlignment="Left" Margin="60,133,0,0" VerticalAlignment="Top" Width="75" Click="buttonOk_Click"/>
-                <Button x:Name="buttonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="201,133,0,0" VerticalAlignment="Top" Width="75" IsCancel="True"/>
-                <TextBox x:Name="scanBarcodeBox" HorizontalAlignment="Left" Margin="60,74,0,0" TextWrapping="Wrap" Width="379" RenderTransformOrigin="0.167,0.602" AutomationProperties.HelpText="Enter Barcode Here" KeyDown="OnKeyDownHandler" Height="38" VerticalAlignment="Top">
-                    <Binding Path="inputBarcode" Mode="TwoWay"/>
-                </TextBox>
-                <RichTextBox x:Name="scanLable" HorizontalAlignment="Left" Height="59" Margin="60,10,0,0" VerticalAlignment="Top" Width="379">
+                <Button x:Name="buttonCancel" Content="Cancel" HorizontalAlignment="Left" Margin="201,133,0,0" VerticalAlignment="Top" Width="75" IsCancel="True" Click="buttonCancel_Click"/>
+                <StackPanel FocusManager.FocusedElement="{Binding ElementName=scanBarcodeBox}">
+                    <TextBox x:Name="scanBarcodeBox" HorizontalAlignment="Left" Margin="60,74,0,0" TextWrapping="Wrap" Width="379" RenderTransformOrigin="0.167,0.602" AutomationProperties.HelpText="Enter Barcode Here" KeyDown="OnKeyDownHandler" Height="38" VerticalAlignment="Top">
+                        <Binding Path="inputBarcode" Mode="TwoWay"/>
+                    </TextBox>
+                </StackPanel>
+                <RichTextBox x:Name="scanLable" HorizontalAlignment="Left" Height="59" Margin="60,10,0,0" VerticalAlignment="Top" Width="379" >
                     <FlowDocument>
                         <Paragraph>
                             <Run Text="Bitte Barcode scannen!" AllowDrop="True"/>
                         </Paragraph>
                     </FlowDocument>
                 </RichTextBox>
-            </Grid>
-        </TabItem>
-        <TabItem x:Name="tabManualInput" Header="Manuell" Margin="-2,-2,-2,0" Height="22" VerticalAlignment="Top">
-            <Grid x:Name="gridManual" Background="#FFFFFF">
-                <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="60,55,0,0" VerticalAlignment="Top" Width="184">
-                    <ComboBoxItem>David</ComboBoxItem>
-                    <ComboBoxItem>Nils</ComboBoxItem>
-                    <ComboBoxItem>Päde</ComboBoxItem>
-                    <ComboBoxItem>Tobi</ComboBoxItem>
-                </ComboBox>
-                <Button x:Name="buttonIn" Content="In" HorizontalAlignment="Left" Margin="60,120,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.167,-0.329"/>
-                <Button x:Name="buttonOut" Content="Out" HorizontalAlignment="Left" Margin="170,120,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.167,-0.329"/>
-            </Grid>
-        </TabItem>
-        <TabItem x:Name="tabManagement" Header="Management" Margin="-2,-2,-2,0" Height="22" VerticalAlignment="Top">
-            <Grid x:Name="gridManagement" Background="#FFFFFF">
-                <Label x:Name="label" Content="Username&#xD;&#xA;" HorizontalAlignment="Left" Margin="60,60,0,0" VerticalAlignment="Top" Height="23"/>
-                <Label x:Name="label_Copy" Content="Password&#xA;" HorizontalAlignment="Left" Margin="60,102,0,0" VerticalAlignment="Top" Height="23"/>
-                <TextBox x:Name="inputUsername" HorizontalAlignment="Left" Height="23" Margin="145,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-                <PasswordBox x:Name="inputPassword" HorizontalAlignment="Left" Margin="145,107,0,0" VerticalAlignment="Top" Width="120"/>
-                <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="107,199,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
             </Grid>
         </TabItem>
 

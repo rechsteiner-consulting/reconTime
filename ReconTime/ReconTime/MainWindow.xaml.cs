@@ -1,18 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ReconTime
 {
@@ -24,8 +14,9 @@ namespace ReconTime
         public MainWindow()
         {
             InitializeComponent();
-        }
 
+        }
+        
         private void OnKeyDownHandler(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Return)
@@ -36,13 +27,23 @@ namespace ReconTime
 
         private void checkIn(int barcode)
         {   //TODO
+            TimeWriter writer = new TimeWriter();
             barcode = Decimal.ToInt32(Math.Floor(Convert.ToDecimal(barcode / 10)));
-            writeCheck("Hallo", barcode, DateTime.Now);
+            if (writer.CheckIn(DateTime.Now, barcode))
+            {
+                writeCheck("Hallo", barcode, DateTime.Now);
+            } else
+            {
+                setScanLable("Da ist was schief gelaufen. Überprüfe deine Eingabe!");
+            }
+
         }
         private void checkOut(int barcode)
         {   //TODO
+            TimeWriter writer = new ReconTime.TimeWriter();
             barcode = Decimal.ToInt32(Math.Floor(Convert.ToDecimal(barcode/10)));
-            writeCheck("Tschüss", barcode, DateTime.Now);            
+            writeCheck("Tschüss", barcode, DateTime.Now);   
+            writer.CheckOut(DateTime.Now, barcode);
         }
 
         private void writeCheck(String checkType, int barcode, DateTime time)
@@ -110,10 +111,9 @@ namespace ReconTime
             inputValidation();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void buttonCancel_Click(object sender, RoutedEventArgs e)
         {
-            EmployeeReader er = new EmployeeReader();
-            er.Reader(inputUsername.Text, inputPassword.Password, "localhost");
+            setScanLable("");
         }
     }
 }

@@ -14,3 +14,10 @@ CheckInMethode tinyint NOT NULL,
 CheckOutMethode tinyint,
 EmployeeID int FOREIGN KEY REFERENCES Employees(EmployeeID)
 )
+Create Table WorkDuration
+(
+Date datetime NOT NULL PRIMARY KEY,
+Duration time NOT NULL,
+CheckInMethode tinyint NOT NULL,
+EmployeeID int FOREIGN KEY REFERENCES Employees(EmployeeID)
+)
